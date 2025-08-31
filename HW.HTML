@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("./bg.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      background-color: rgba(255, 255, 255, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      background-color: #35011e;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #35011e;
+    }
+
+    /* Middle form box */
+    .login-box {
+      margin-top: 120px;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      width: 400px;
+      border-radius: 0; /* no corners */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #35011e;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 0;
+      font-size: 14px;
+    }
+
+    .login-btn {
+      width: 100%;
+      background-color: #35011e;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #87022a;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">LOGIN</div>
+    <div class="nav-buttons">
+      <button onclick="showForm('student')">Student</button>
+      <button onclick="showForm('faculty')">Faculty</button>
+      <button onclick="showForm('parent')">Parent</button>
+    </div>
+  </header>
+
+  <!-- Middle Form Box -->
+  <div class="login-box" id="form-box" style="border-radius: 20px;">
+    <h2>Student Login</h2>
+    <form id="login-form">
+      <!-- Default form is Student -->
+      <div class="input-group">
+        <label for="regno">Register Number</label>
+        <input type="text" id="regno" placeholder="Enter Register Number" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter Password" required>
+      </div>
+
+      <div class="input-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" required>
+      </div>
+
+      <div class="input-group">
+        <label for="department">Department</label>
+        <select id="department" required>
+          <option value="">-- Select Department --</option>
+          <option value="cse">Computer Science</option>
+          <option value="ece">Electronics</option>
+          <option value="mech">Mechanical</option>
+          <option value="civil">Civil</option>
+          <option value="mba">MBA</option>
+        </select>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function showForm(role) {
+      let formBox = document.getElementById("form-box");
+      let formHtml = "";
+      let title = "";
+
+      if (role === "student") {
+        title = "Student Login";
+        formHtml = `
+          <div class="input-group">
+            <label>Register Number</label>
+            <input type="text" placeholder="Enter Register Number" required>
+          </div>
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="Enter Password" required>
+          </div>
+          <div class="input-group">
+            <label>Date of Birth</label>
+            <input type="date" required>
+          </div>
+          <div class="input-group">
+            <label>Department</label>
+            <select required>
+              <option value="">-- Select Department --</option>
+              <option value="cse">Computer Science</option>
+              <option value="ece">Electronics</option>
+              <option value="mech">Mechanical</option>
+              <option value="civil">Civil</option>
+              <option value="mba">MBA</option>
+            </select>
+          </div>`;
+      } 
+      else if (role === "faculty") {
+        title = "Faculty Login";
+        formHtml = `
+          <div class="input-group">
+            <label>Faculty ID</label>
+            <input type="text" placeholder="Enter Faculty ID" required>
+          </div>
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="Enter Password" required>
+          </div>`;
+      } 
+      else if (role === "parent") {
+        title = "Parent Login";
+        formHtml = `
+          <div class="input-group">
+            <label>Student Register Number</label>
+            <input type="text" placeholder="Enter Student Register Number" required>
+          </div>
+          <div class="input-group">
+            <label>Parent Mobile Number</label>
+            <input type="text" placeholder="Enter Mobile Number" required>
+          </div>`;
+      } 
+      
+
+      formBox.innerHTML = `<h2>${title}</h2><form>${formHtml}<button type="submit" class="login-btn">Login</button></form>`;
+    }
+  </script>
+    <script>
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = {
+      regNumber: document.querySelector('[name="regNumber"]').value,
+      password: document.querySelector('[name="password"]').value,
+      dob: document.querySelector('[name="dob"]').value,
+      department: document.querySelector('[name="department"]').value
+    };
+
+    fetch('http://localhost:5000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+      .then(response => response.json())
+      .then(data => alert(data.message))
+      .catch(error => console.error('Error:', error));
+  });
+  </script>
+
+</body>
+</html>

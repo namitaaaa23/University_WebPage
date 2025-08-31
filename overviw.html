@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JFN UNIVERSITY - Overview</title>
+    <style>
+        /* Color Palette */
+        :root {
+            --maroon: #800000;
+            --beige: #f5f0e6;
+            --dark-maroon: #660000;
+            --text-color: #3b1a1a;
+            --button-bg: #660000;
+            --button-hover-bg: #800000;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--beige);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--maroon);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            border-bottom: 5px solid var(--dark-maroon);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(128, 0, 0, 0.15);
+            padding: 30px 40px;
+        }
+
+        main h2 {
+            color: var(--maroon);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--maroon);
+            padding-bottom: 10px;
+        }
+
+        main p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+
+        .btn-contact {
+            margin-top: 30px;
+            display: inline-block;
+            background-color: var(--button-bg);
+            color: beige;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-contact:hover {
+            background-color: var(--button-hover-bg);
+        }
+        .btn-login {
+            margin-top: 30px;
+            display: inline-block;
+            background-color: var(--button-bg);
+            color: beige;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-login:hover {
+            background-color: var(--button-hover-bg);
+        }
+
+        footer {
+            text-align: center;
+            margin: 50px 0 30px;
+            color: var(--maroon);
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JFN UNIVERSITY</h1>
+        <p>Welcome to JFN UNIVERSITY</p>
+    </header>
+    <div style="text-align: center;">
+    <img src="https://www.amity.edu/wsejhu/images/title-bg1.jpg"
+      alt="JFN UNIVERSITY" height="500px" width="800px" /></div>
+      
+
+    <main>
+        <h2>OVERVIEW</h2>
+        <p>
+            JFN University is a premier institution dedicated to excellence in higher education, research, and innovation. Established with a vision to nurture intellectual growth and leadership, the university provides a dynamic learning environment that combines academic rigor with real-world applications.
+
+        </p>
+        <p>
+           The campus is home to modern facilities, advanced laboratories, a rich library, and a vibrant student community. With a strong focus on both academics and extracurricular development, JFN University aims to prepare students to meet global challenges with confidence and creativity.
+
+        </p>
+        <p>
+           Offering a wide range of undergraduate, postgraduate, and research programs across multiple disciplines, JFN University is committed to fostering critical thinking, innovation, and lifelong learning. The dedicated faculty and collaborative culture ensure that students not only gain knowledge but also develop the skills and values needed to make a meaningful impact on society.
+
+        </p>
+        <button class="btn-login" onclick="window.location.href='About.html'">About us</button>
+        <button class="btn-login" onclick="window.location.href='HW.html'">Login</button>
+        <button class="btn-contact" onclick="window.location.href='contact.html'">Contact Us</button>
+    </main>
+
+    <footer>
+        &copy; 2025 JFN University. All rights reserved.
+    </footer>
+</body>
+</html>
